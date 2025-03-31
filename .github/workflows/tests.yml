@@ -12,17 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4  
+      uses: actions/checkout@v4
     
-    # - name: Setup Node.js
-    #   uses: actions/setup-node@v4  
-    #   with:
-    #     node-version: 20.x  
-    #     cache: 'npm'
+    - name: Setup Node.js (LTS)
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.x  # Используем 18.x вместо 20.x для совместимости
     
-    - name: Check if repository is private
-      run: exit 1
-      if: ${{ github.event.repository.private }}
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
     
     - name: Clone test library
       run: |
@@ -30,11 +30,17 @@ jobs:
         git clone --branch main --single-branch --depth 1 \
           https://github.com/Yandex-Practicum/tests-selfmade-project-4-public.git
     
+    - name: Install npm dependencies
+      working-directory: ./tests-selfmade-project-4-public
+      run: |
+        npm install canvas@latest
+        npm install
+        
     - name: Run tests
       run: bash tests-selfmade-project-4-public/run.sh
     
     - name: Upload layout comparison
-      uses: actions/upload-artifact@v4  
+      uses: actions/upload-artifact@v4
       with:
         name: layout-compare
         path: tests-selfmade-project-4-public/output.jpg
