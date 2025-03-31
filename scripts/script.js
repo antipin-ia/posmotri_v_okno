@@ -27,7 +27,6 @@ showPreloader(preloaderTmp, videoContainer);
 showPreloader(preloaderTmp, cardsContainer);
 mainMechanics(endpoint);
 
-
 // осуществляется поиск ✅
 form.onsubmit = (e) => {
   e.preventDefault();
@@ -293,3 +292,4 @@ function showMoreCards({
     }
   });
 }
+

@@ -4,13 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #545050;
+  background-color: var(--accent-color);
 }
 
 .error__title {
-  color: #fff;
-  font-family: Oswald, sans-serif;
-  font-size: 30px;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font-family), sans-serif;
+  font-weight: var(--standard-font-weight);
+  font-size: var(--large-font-size);
+  line-height: var(--large-line-height);
+  letter-spacing: -1px;
   text-align: center;
   text-transform: uppercase;
 }
