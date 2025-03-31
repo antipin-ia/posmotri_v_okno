@@ -1,0 +1,8 @@
+@import url(global/global.css);
+@import url(global/variables.css);
+@import url(global/scrollbar.css);
+@import url(features/visually-hidden.css);
+@import url(components/button.css);
+@import url(components/result.css);
+@import url(components/search-form.css);
+@import url(components/content.css);
