@@ -11,33 +11,39 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4  
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4  
+    - name: Клонирование репозитория
+      uses: actions/checkout@v3
+      
+    - name: Установка Node.js 20.x
+      uses: actions/setup-node@v3
       with:
-        node-version: 20.x  
-        cache: 'npm'
-    
-    - name: Check if repository is private
+        node-version: 20.x
+        
+    - name: Установка системных зависимостей (canvas)
+      run: sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
+      
+    - name: Проверка, что репозиторий приватный
       run: exit 1
-      if: ${{ github.event.repository.private }}
-    
-    - name: Clone test library
+      if: ${{github.event.repository.private}}
+      
+    - name: Загрузка тестовой библиотеки
+      run: set -eu && git clone --branch main --single-branch --depth 1 https://github.com/Yandex-Practicum/tests-selfmade-project-4-public.git
+      
+    - name: Установка зависимостей
+      working-directory: ./tests-selfmade-project-4-public
       run: |
-        set -eu
-        git clone --branch main --single-branch --depth 1 \
-          https://github.com/Yandex-Practicum/tests-selfmade-project-4-public.git
-    
-    - name: Run tests
-      run: bash tests-selfmade-project-4-public/run.sh
-    
-    - name: Upload layout comparison
-      uses: actions/upload-artifact@v4  
+        npm install
+        npm install canvas
+        
+    - name: Запуск тестов
+      working-directory: ./tests-selfmade-project-4-public
+      run: bash run.sh
+      
+    - name: Загрузка результата (layout-compare)
+      uses: actions/upload-artifact@v3
       with:
         name: layout-compare
         path: tests-selfmade-project-4-public/output.jpg
-    
-    - name: Show test results
+        
+    - name: Показать результаты тестов
       run: bash tests-selfmade-project-4-public/result.sh
