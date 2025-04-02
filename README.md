@@ -1,5 +1,5 @@
 ### Ссылка на репозиторий:
-https://github.com/ilia-kravtsov/posmotri_v_okno
+https://github.com/antipin-ia/posmotri_v_okno
 
 # проект "Посмотри в окно"
 
@@ -13,7 +13,7 @@ https://github.com/ilia-kravtsov/posmotri_v_okno
 
 ### Контакт для связи
 
-Телеграм - [@kravtsov_ilia](https://t.me/kravtsov_ilia)
+Телеграм - [@Vanishello](https://t.me/Vanishello)
 
 ### Благодарность
 
