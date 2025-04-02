@@ -83,8 +83,7 @@
 .search-form__checkbox-list {
     display: flex;
     column-gap: 15px;
-    inline-size: 100%;
-    max-inline-size: 212px;
+    inline-size: 212px;
 }
 
 .search-form__pseudo-checkbox {

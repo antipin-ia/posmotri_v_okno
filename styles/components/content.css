@@ -46,6 +46,7 @@
     display: block;
     color: var(--primary-font-color);
     text-decoration: none;
+    padding: 2px;
 }
 
 .content__card-link:hover {
@@ -67,6 +68,7 @@
 
 .content__card-link_current {
     background: var(--accent-color);
+    padding: 2px;
 }
 
 .content__video-card {

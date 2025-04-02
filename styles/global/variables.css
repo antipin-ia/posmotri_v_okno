@@ -2,20 +2,20 @@
     /* Sizes */
     --main-inline-size: 1200px;
     --main-block-size: 100%;
-    --max-width-large: 1150px;
+    --max-width-large: 1140px;
 
     /* Fonts */
     --primary-font-family: 'Fira Sans Condensed', 'Helvetica', 'Arial';
     --secondary-font-family: 'Oswald', 'Helvetica', 'Arial';
     --standard-font-size: 1rem;
-    --enormous-font-size: 4.6875rem;
+    --enormous-font-size: 75px;
     --bold-font-weight: 700;
     --small-line-height: 90%;
     --smaller-line-height: 94%;
     --standard-line-height: 100%;
     --large-line-height: 110%;
-    --large-font-size: 1.875rem;
-    --medium-font-size: 1.125rem;
+    --large-font-size: 30px;
+    --medium-font-size: 18px;
     --standard-font-weight: 400;
 
     /* Colors */
